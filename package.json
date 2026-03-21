@@ -1,0 +1,41 @@
+{
+  "name": "automationexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:ci": "./scripts/run-tests.sh",
+    "test:smoke": "bddgen && playwright test --grep @smoke",
+    "test:regression": "bddgen && playwright test --grep @regression",
+    "test:login": "bddgen && playwright test --grep @login",
+    "test:register": "bddgen && playwright test --grep @register",
+    "test:contact-us": "bddgen && playwright test --grep @contact-us",
+    "test:test-cases": "bddgen && playwright test --grep @test-cases",
+    "test:products": "bddgen && playwright test --grep @products",
+    "test:home": "bddgen && playwright test --grep @home",
+    "test:checkout": "bddgen && playwright test --grep @checkout",
+    "test:category": "bddgen && playwright test --grep @category",
+    "test:brand": "bddgen && playwright test --grep @brand",
+    "test:tag": "bddgen && playwright test --grep @$TAG",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-results",
+    "test:allure": "npm test && npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@faker-js/faker": "^10.3.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3",
+    "allure-commandline": "^2.38.0",
+    "allure-playwright": "^3.6.0",
+    "playwright": "^1.58.2",
+    "playwright-bdd": "^8.4.2",
+    "typescript": "^5.9.3"
+  }
+}
